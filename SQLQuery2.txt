@@ -1,0 +1,22 @@
+SELECT prod_name -- all products in product table
+FROM Products;
+
+SELECT prod_name -- product names ordered by decending order
+FROM products
+ORDER BY prod_name DESC;
+
+SELECT * -- all columns in the orders table
+FROM orders;
+
+SELECT DISTINCT vend_city -- unique vendor cities
+FROM vendors
+
+SELECT vend_name -- vendor names ordered by vendor city
+FROM vendors
+ORDER BY vend_city
+
+SELECT cust_city, cust_state, cust_country -- customer city, state and country ordered by customer state in decreasing order
+FROM customers
+ORDER BY cust_state DESC
+
+
