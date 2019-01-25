@@ -1,0 +1,15 @@
+SELECT vend_name, vend_state, vend_zip -- vend name, state and zip which names start ith a, b, c, or d by descending order
+FROM Vendors
+WHERE vend_name LIKE '[ABCD]%'
+ORDER BY vend_name DESC
+
+SELECT cust_id, cust_name, cust_contact -- list of all customer id, name and contact of customers that contact end with s and third letter isnt n
+FROM Customers
+WHERE cust_contact LIKE '__[^n]%s';
+
+SELECT RTRIM (cust_address)+ '('+ RTRIM(cust_city) +')' + '('+ RTRIM(cust_zip)+')' + '('+ RTRIM(cust_state)+')' + '('+ RTRIM(cust_country)+')' AS cust_full_address -- new field with address, city, zip, state and country
+FROM Customers
+
+SELECT quantity*2 AS double_quantity, item_price/2 AS half_item_price, quantity*item_price AS expanded_values -- columns with double the quantity, half the item price and their expanded values
+FROM OrderItems
+
